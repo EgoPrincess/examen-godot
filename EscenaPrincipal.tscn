@@ -1,0 +1,49 @@
+[gd_scene format=3 uid="uid://ptg7bpaxp3r7"]
+
+[ext_resource type="Texture2D" uid="uid://57obyaa26pp4" path="res://icon.svg" id="1_nwmal"]
+[ext_resource type="PackedScene" uid="uid://b8m6bxfmc6nic" path="res://node_2d.tscn" id="2_l726g"]
+[ext_resource type="Script" uid="uid://dckdqnobvu45d" path="res://static_body_2d_2.gd" id="3_l726g"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lfkbx"]
+size = Vector2(130, 127)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_aui74"]
+size = Vector2(146, 139)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vicex"]
+size = Vector2(128, 128)
+
+[node name="Node2D" type="Node2D" unique_id=1513545681]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=371985641]
+position = Vector2(-25.999998, 657.99994)
+scale = Vector2(10, 10)
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D" unique_id=780355909]
+position = Vector2(3, 0)
+texture = ExtResource("1_nwmal")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=2092992761]
+position = Vector2(4, -0.5)
+shape = SubResource("RectangleShape2D_lfkbx")
+
+[node name="Node2D" parent="." unique_id=357815873 instance=ExtResource("2_l726g")]
+position = Vector2(-3, -44)
+
+[node name="Area_Muerte" type="StaticBody2D" parent="." unique_id=1710227938]
+position = Vector2(432, -48)
+script = ExtResource("3_l726g")
+
+[node name="Area2D" type="Area2D" parent="Area_Muerte" unique_id=1338671782]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area_Muerte/Area2D" unique_id=1158094564]
+position = Vector2(-2, -1)
+shape = SubResource("RectangleShape2D_aui74")
+
+[node name="Sprite2D" type="Sprite2D" parent="Area_Muerte" unique_id=2141179538]
+position = Vector2(-1, 0)
+texture = ExtResource("1_nwmal")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area_Muerte" unique_id=1393900981]
+position = Vector2(-1, 0)
+shape = SubResource("RectangleShape2D_vicex")
